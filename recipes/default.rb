@@ -4,7 +4,7 @@
 #
 # Copyright 2014, 2015 Bloomberg Finance L.P.
 #
-include_recipe 'selinux::disabled'
+include_recipe 'selinux::disabled' if node['os'] == 'linux'
 
 if node['firewall']['allow_consul']
   include_recipe 'firewall::default'
@@ -12,13 +12,13 @@ if node['firewall']['allow_consul']
   firewall_rule 'consul' do
     protocol :tcp
     port node['consul']['config']['ports'].values
-    action :allow
+    action :create
+    command :allow
   end
 end
 
 poise_service_user node['consul']['service_user'] do
   group node['consul']['service_group']
-  action :create
 end
 
 config = consul_config node['consul']['service_name'] do |r|
