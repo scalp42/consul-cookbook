@@ -72,7 +72,7 @@ module ConsulCookbook
       attribute(:protocol, kind_of: String)
       attribute(:recursor, kind_of: String)
       attribute(:recursors, kind_of: Array)
-      attribute(:retry_interval, kind_of: Integer)
+      attribute(:retry_interval, kind_of: String)
       attribute(:server, equal_to: [true, false], default: true)
       attribute(:server_name, kind_of: String)
       attribute(:skip_leave_on_interrupt, equal_to: [true, false], default: false)
