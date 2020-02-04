@@ -17,7 +17,7 @@ depends 'nssm', '>= 4.0.0'
 depends 'golang'
 depends 'poise', '~> 2.8'
 depends 'poise-archive', '~> 1.5'
-depends 'poise-service', '~> 1.4'
+depends 'poise-service', '~> 1.5'
 depends 'windows', '~> 3.1'
 
 source_url 'https://github.com/sous-chefs/consul'
